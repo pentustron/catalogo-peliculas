@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Películas</title>
+    <style>
+        /* Estilos CSS para dar formato a la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .pelicula {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .pelicula img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .botones {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .botones button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .botones img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        #buscador {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #buscador input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #buscador button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #buscador img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Películas</h1>
+    </header>
+
+    <!-- Botones -->
+    <div class="botones">
+        <button>
+            <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="Borrar"> Borrar
+        </button>
+        <button>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT03BYKdGfi7An6P8BhvGd5QUHWqwI2KOqGQi95SR3qEA&s" alt="Agregar"> Agregar
+        </button>
+    </div>
+
+    <!-- Buscador -->
+    <div id="buscador">
+        <input type="text" placeholder="Buscar...">
+        <button>
+            <img src="https://t4.ftcdn.net/jpg/01/96/85/35/360_F_196853586_7HIkIS1cI3WH5SpEeUDBhIoMUlitkTji.jpg" alt="Buscar"> Buscar
+        </button>
+    </div>
+
+    <!-- Contenedor del catálogo -->
+    <div id="catalogo">
+        <!-- Aquí se mostrarán las películas -->
+    </div>
+
+    <!-- Script para obtener y mostrar las películas -->
+    <script>
+        // Hacer una solicitud al servidor para obtener los datos del catálogo de películas
+        fetch('/peliculas')
+            .then(response => response.json())
+            .then(data => {
+                // Obtener el contenedor donde se mostrarán las películas
+                const catalogoContainer = document.getElementById('catalogo');
+
+                // Iterar sobre cada película en los datos recibidos
+                data.pelicula.forEach(pelicula => {
+                    // Crear un elemento para mostrar la película
+                    const peliculaDiv = document.createElement('div');
+                    peliculaDiv.classList.add('pelicula');
+
+                    // Crear elementos para mostrar el nombre, año, director y actores de la película
+                    const nombre = document.createElement('h2');
+                    nombre.textContent = pelicula.nombre;
+                    const año = document.createElement('p');
+                    año.textContent = `Año: ${pelicula.año}`;
+                    const director = document.createElement('p');
+                    director.textContent = `Director: ${pelicula.director}`;
+                    const actores = document.createElement('p');
+                    actores.textContent = `Actores: ${pelicula.actores.join(', ')}`;
+
+                    // Crear un elemento para mostrar la imagen de la película
+                    const imagen = document.createElement('img');
+                    imagen.src = pelicula.img;
+                    imagen.alt = pelicula.nombre;
+
+                    // Agregar los elementos al contenedor de la película
+                    peliculaDiv.appendChild(nombre);
+                    peliculaDiv.appendChild(año);
+                    peliculaDiv.appendChild(director);
+                    peliculaDiv.appendChild(actores);
+                    peliculaDiv.appendChild(imagen);
+
+                    // Agregar el contenedor de la película al contenedor principal
+                    catalogoContainer.appendChild(peliculaDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error al obtener el catálogo de películas:', error);
+            });
+    </script>
+</body>
+</html>

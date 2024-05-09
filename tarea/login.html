@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión o registrarse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        button[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            height: 40px;
+        }
+        
+        button[type="submit"] {
+            transition: background-color 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Iniciar sesión</h1>
+        <form id="loginForm" action="/login" method="POST">
+            <input type="text" name="username" placeholder="Nombre de usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    
+        <h1>Registrarse</h1>
+        <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="Nombre de usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <script>
+        // Agregar un evento de escucha para el envío del formulario de inicio de sesión
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Detener el envío del formulario para manejarlo con JavaScript
+            event.preventDefault();
+            
+            // Obtener los datos del formulario de inicio de sesión
+            const formData = new FormData(this);
+    
+            // Realizar una solicitud fetch para enviar los datos de inicio de sesión al servidor
+            fetch('/login', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Si la respuesta del servidor es un código 200 (éxito), redirigir al usuario a index.html
+                if (response.status === 200) {
+                    window.location.href = '/index.html';
+                } else {
+                    // Si la respuesta del servidor no es un código 200, mostrar un mensaje de error (esto es opcional)
+                    console.error('Error al iniciar sesión:', response.statusText);
+                }
+            })
+            .catch(error => {
+                console.error('Error al enviar datos de inicio de sesión:', error);
+            });
+        });
+    </script>
+</body>
+</html>

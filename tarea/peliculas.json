@@ -1,0 +1,75 @@
+{
+    "pelicula": [
+      {
+        "nombre": "Forrest Gump",
+        "año": 1994,
+        "director": "Robert Zemeckis",
+        "actores": ["Tom Hanks", "Robin Wright", "Gary Sinise"],
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRETVKRhJp37gfuoD6zuy6tJ1xtLXoz8FlG20-B8gUqiglO5d_tsuS8n5D_OZymki3gWR0kgtJWmEO0glC7ToDXrw5zWFeJ05POAJqXhQ"
+      },
+      {
+        "nombre": "Pulp Fiction",
+        "año": 1994,
+        "director": "Quentin Tarantino",
+        "actores": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0rKAe3LGySVVQ1VOlyMYu2mTnjEwIUicAZJ7LIwFDYlQ2_2zzOZ36NloxiJ9t8gXcRljXLLPRVshkQSXxN4GbFweZBHPthItN5CJm_FQ"
+      },
+      {
+        "nombre": "The Dark Knight",
+        "año": 2008,
+        "director": "Christopher Nolan",
+        "actores": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+        "img": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg"
+      },
+      {
+        "nombre": "Inception",
+        "año": 2010,
+        "director": "Christopher Nolan",
+        "actores": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwy3L0Frx0ii2-PSACqz-UmNT0Q0FJssfP9bxCF4qTDq8-T5xQAIZvpSil-QjibOJTg7w&usqp=CAU"
+      },
+      {
+        "nombre": "The Shawshank Redemption",
+        "año": 1994,
+        "director": "Frank Darabont",
+        "actores": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+        "img": "https://m.media-amazon.com/images/I/815qtzaP9iL._AC_UF894,1000_QL80_DpWeblab_.jpg"
+      },
+      {
+        "nombre": "The Godfather",
+        "año": 1972,
+        "director": "Francis Ford Coppola",
+        "actores": ["Marlon Brando", "Al Pacino", "James Caan"],
+        "img": "https://m.media-amazon.com/images/I/81fc+fWtALL._AC_UF894,1000_QL80_DpWeblab_.jpg"
+      },
+      {
+        "nombre": "Schindler's List",
+        "año": 1993,
+        "director": "Steven Spielberg",
+        "actores": ["Liam Neeson", "Ben Kingsley", "Ralph Fiennes"],
+        "img": "https://m.media-amazon.com/images/I/81+H4lZVw+L._AC_UF894,1000_QL80_.jpg"
+      },
+      {
+        "nombre": "The Matrix",
+        "año": 1999,
+        "director": "Lana Wachowski, Lilly Wachowski",
+        "actores": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+        "img": "https://m.media-amazon.com/images/I/613ypTLZHsL._AC_UF1000,1000_QL80_.jpg"
+      },
+      {
+        "nombre": "Fight Club",
+        "año": 1999,
+        "director": "David Fincher",
+        "actores": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+        "img": "https://m.media-amazon.com/images/M/MV5BMGFlNWM0NWYtMWI3OS00OTMyLTg0YWYtNjhlNjRiYWUyZjRlXkEyXkFqcGdeQXVyMTUzNTgzNzM0._V1_FMjpg_UX1000_.jpg"
+      },
+      {
+        "nombre": "Goodfellas",
+        "año": 1990,
+        "director": "Martin Scorsese",
+        "actores": ["Robert De Niro", "Ray Liotta", "Joe Pesci"],
+        "img": "https://static.independent.co.uk/2020/09/17/10/goodfellas-poster.jpg"
+      }
+    ]
+  }
+  
